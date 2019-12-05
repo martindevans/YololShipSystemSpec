@@ -1,0 +1,27 @@
+﻿networks:
+ - &primary
+   name: "primary network"
+   remark: "Primary data backbone of the ship"
+   devices:
+    - !radio_transmitter
+      prefix: pre
+      suffix: post
+      TransmitMessage: tm
+      TransmitRange: tr
+      Frequency: fq
+    - !cargo_beam
+      prefix: range
+
+ - &hull_integrity
+   name: "integrity"
+   remark: "wires on hull plating to detect breaches"
+
+ - &bridge
+   name: "bridge"
+   remark: "Data network for bridge terminals"
+
+relays:
+ - src: *hull_integrity
+   dst: *primary
+ - src: *bridge
+   dst: *primary
