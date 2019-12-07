@@ -15,6 +15,17 @@
  - &hull_integrity
    name: "integrity"
    remark: "wires on hull plating to detect breaches"
+   devices:
+   - !chip_socket
+     script: foo.lol
+   - !rack
+     prefix: "rack1_"
+     module:
+       !chip_core
+       Script0: bar.lol
+       Script0: baash.lol
+       Script0: baz.lol
+        
 
  - &bridge
    name: "bridge"

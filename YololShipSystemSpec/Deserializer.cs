@@ -3,6 +3,7 @@ using System.IO;
 using Humanizer;
 using SharpYaml.Serialization;
 using YololShipSystemSpec.Devices;
+using YololShipSystemSpec.Devices.RackModules;
 
 namespace YololShipSystemSpec
 {
@@ -37,6 +38,11 @@ namespace YololShipSystemSpec
             Register<Tank>();
             Register<Thruster>();
             Register<Turntable>();
+            Register<Rack>();
+            Register<ChipCore>();
+            Register<ChipReader>();
+            Register<SocketCore>();
+            Register<ChipSocket>();
         }
 
         private void Register<T>()

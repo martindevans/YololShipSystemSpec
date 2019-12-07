@@ -5,42 +5,40 @@ using System.Reflection;
 using YololShipSystemSpec.Attributes;
 using YololShipSystemSpec.Devices;
 
-#pragma warning disable IDE1006 // Naming Styles
-
 namespace YololShipSystemSpec
 {
     internal class Network
         : INetwork
     {
-        [YamlMember] public string name { get; set; }
-        [YamlIgnore] string INetwork.Name => name;
+        [YamlMember("name")] public string _name { get; set; }
+        [YamlIgnore] string INetwork.Name => _name;
 
-        [YamlMember] public string remark { get; set; }
-        [YamlIgnore] string INetwork.Remark => remark;
+        [YamlMember("remark")] public string _remark { get; set; }
+        [YamlIgnore] string INetwork.Remark => _remark;
 
-        [YamlMember] public List<IDevice> devices { get; set; }
-        IReadOnlyList<IDevice> INetwork.Devices => devices;
+        [YamlMember("devices")] public List<IDevice> _devices { get; set; }
+        IReadOnlyList<IDevice> INetwork.Devices => _devices;
     }
 
     internal class Specification
         : ISpecification
     {
-        [YamlMember] public List<Network> networks { get; set; }
-        [YamlIgnore] IReadOnlyList<INetwork> ISpecification.Networks => networks;
+        [YamlMember("networks")] public List<Network> _networks { get; set; }
+        [YamlIgnore] IReadOnlyList<INetwork> ISpecification.Networks => _networks;
 
-        [YamlMember] public List<Relay> relays { get; set; }
-        [YamlIgnore] IReadOnlyList<IRelay> ISpecification.Relays => relays;
+        [YamlMember("relays")] public List<Relay> _relays { get; set; }
+        [YamlIgnore] IReadOnlyList<IRelay> ISpecification.Relays => _relays;
     }
 
     internal class Device<T>
         : IDevice
         where T : new()
     {
-        [YamlMember] public string prefix { get; set; }
-        [YamlIgnore] public string Prefix => prefix;
+        [YamlMember("prefix")] public string _prefix { get; set; }
+        [YamlIgnore] public string Prefix => _prefix;
 
-        [YamlMember] public string suffix { get; set; }
-        [YamlIgnore] public string Suffix => suffix;
+        [YamlMember("suffix")] public string _suffix { get; set; }
+        [YamlIgnore] public string Suffix => _suffix;
 
         private IReadOnlyDictionary<string, string> _fieldNames;
         public IReadOnlyDictionary<string, string> FieldNames
