@@ -4,6 +4,7 @@ using Humanizer;
 using SharpYaml.Serialization;
 using YololShipSystemSpec.Devices;
 using YololShipSystemSpec.Devices.RackModules;
+using YololShipSystemSpec.Devices.RackModules.Chips;
 
 namespace YololShipSystemSpec
 {
@@ -43,6 +44,8 @@ namespace YololShipSystemSpec
             Register<ChipReader>();
             Register<SocketCore>();
             Register<ChipSocket>();
+            Register<MemoryChip>();
+            Register<YololChip>();
         }
 
         private void Register<T>()

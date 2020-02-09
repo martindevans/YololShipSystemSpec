@@ -1,18 +1,18 @@
 ﻿using SharpYaml.Serialization;
 using YololShipSystemSpec.Attributes;
+using YololShipSystemSpec.Devices.RackModules.Chips;
 
 namespace YololShipSystemSpec.Devices
 {
     internal class ChipSocket
-        : Device<ButtonTypes>, IButton
+        : Device<ChipSocketTypes>, IChipSocket
     {
         [FieldRemap] public string ButtonState { get; set; }
         [FieldRemap] public string ButtonOnStateValue { get; set; }
         [FieldRemap] public string ButtonOffStateValue { get; set; }
         [FieldRemap] public string ButtonStyle { get; set; }
 
-        [YamlMember("script")] private string _script;
-        [YamlIgnore] public string Script => _script;
+        [YamlMember("chip")] public IChip Chip { get; set;}
     }
 
     public interface IChipSocket
@@ -23,7 +23,7 @@ namespace YololShipSystemSpec.Devices
         string ButtonOffStateValue { get; }
         string ButtonStyle { get; }
 
-        string Script { get; }
+        IChip Chip { get; }
 
         ChipSocketTypes TypeOf { get; }
     }

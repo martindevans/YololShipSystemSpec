@@ -1,17 +1,18 @@
-﻿using YololShipSystemSpec.Attributes;
+﻿using SharpYaml.Serialization;
+using YololShipSystemSpec.Devices.RackModules.Chips;
 
 namespace YololShipSystemSpec.Devices.RackModules
 {
     internal class ChipReader
         : Device<ChipReaderTypes>, IChipReader
     {
-        [FieldRemap] public string Script { get; set; }
+        [YamlMember("slot1")] public IChip Slot1 { get; set; }
     }
 
     public interface IChipReader
         : IRackModule
     {
-        string Script { get; }
+        IChip Slot1 { get; }
     }
 
     public class ChipReaderTypes

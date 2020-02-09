@@ -16,16 +16,22 @@
    name: "integrity"
    remark: "wires on hull plating to detect breaches"
    devices:
-   - !chip_socket
-     script: foo.lol
    - !rack
      prefix: "rack1_"
      module:
        !chip_core
-       Script0: bar.lol
-       Script0: baash.lol
-       Script0: baz.lol
-        
+       slot1:
+         !memory_chip
+         ChipField1: "one"
+       slot2:
+         !yolol_chip
+         script: foo.lol
+       slot3:
+         !yolol_chip
+         script: foo.lol
+         prefix: pre
+         suffix: post
+         ChipWait: wait
 
  - &bridge
    name: "bridge"

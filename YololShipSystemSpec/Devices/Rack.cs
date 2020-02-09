@@ -1,5 +1,4 @@
 ﻿using SharpYaml.Serialization;
-using System.Collections.Generic;
 using YololShipSystemSpec.Attributes;
 using YololShipSystemSpec.Devices.RackModules;
 
