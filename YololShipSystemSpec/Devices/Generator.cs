@@ -5,18 +5,18 @@ namespace YololShipSystemSpec.Devices
     internal class Generator
         : Device<GeneratorTypes>, IGenerator
     {
-        [FieldRemap] public string FuelChamberFuel { get; }
-        [FieldRemap] public string FuelChamberMaxFuel { get; }
-        [FieldRemap] public string FuelChamberUnitRateLimit { get; }
-        [FieldRemap] public string FuelChamberUnitRate { get; }
-        [FieldRemap] public string GeneratorUnitRateLimit { get; }
-        [FieldRemap] public string GeneratorUnitRate { get; }
-        [FieldRemap] public string StoredCoolant { get; }
-        [FieldRemap] public string MaxCoolant { get; }
-        [FieldRemap] public string CoolerUnitRateLimit { get; }
-        [FieldRemap] public string CoolerUnitRate { get; }
-        [FieldRemap] public string SocketUnitRateLimit { get; }
-        [FieldRemap] public string SocketUnitRate { get; }
+        [FieldRemap] public string FuelChamberFuel { get; set; }
+        [FieldRemap] public string FuelChamberMaxFuel { get; set; }
+        [FieldRemap] public string FuelChamberUnitRateLimit { get; set; }
+        [FieldRemap] public string FuelChamberUnitRate { get; set; }
+        [FieldRemap] public string GeneratorUnitRateLimit { get; set; }
+        [FieldRemap] public string GeneratorUnitRate { get; set; }
+        [FieldRemap] public string StoredCoolant { get; set; }
+        [FieldRemap] public string MaxCoolant { get; set; }
+        [FieldRemap] public string CoolerUnitRateLimit { get; set; }
+        [FieldRemap] public string CoolerUnitRate { get; set; }
+        [FieldRemap] public string SocketUnitRateLimit { get; set; }
+        [FieldRemap] public string SocketUnitRate { get; set; }
     }
 
     public interface IGenerator
