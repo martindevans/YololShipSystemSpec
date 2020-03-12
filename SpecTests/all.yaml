@@ -1,5 +1,10 @@
 ﻿networks:
  - &primary
+   extensions:
+     fields:
+      - foo: "bar"
+      - bash: "baz"
+     stuff: "whatever"
    name: "primary network"
    remark: "Primary data backbone of the ship"
    devices:

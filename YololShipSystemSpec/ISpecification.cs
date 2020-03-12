@@ -5,6 +5,8 @@ namespace YololShipSystemSpec
 {
     public interface ISpecification
     {
+        IReadOnlyDictionary<string, object> Extensions { get; }
+
         IReadOnlyList<INetwork> Networks { get; }
 
         IReadOnlyList<IRelay> Relays { get; }
@@ -12,6 +14,8 @@ namespace YololShipSystemSpec
 
     public interface INetwork
     {
+        IReadOnlyDictionary<string, object> Extensions { get; }
+
         string Name { get; }
 
         string Remark { get; }
@@ -21,6 +25,8 @@ namespace YololShipSystemSpec
 
     public interface IDevice
     {
+        IReadOnlyDictionary<string, object> Extensions { get; }
+
         string Prefix { get; }
         string Suffix { get; }
 
