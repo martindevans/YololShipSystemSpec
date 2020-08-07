@@ -17,6 +17,7 @@ namespace SpecTests
             var spec = deserializer.Deserialize(input);
 
             Assert.IsNotNull(spec);
+            Assert.AreEqual("1.0.0", spec.Version);
 
             Console.WriteLine(string.Join(",", spec.Networks[0].Devices[0].FieldNames));
         }

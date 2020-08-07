@@ -1,4 +1,6 @@
-﻿networks:
+﻿version: "1.0.0"
+
+networks:
  - &primary
    extensions:
      fields:

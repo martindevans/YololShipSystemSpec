@@ -5,6 +5,8 @@ namespace YololShipSystemSpec
 {
     public interface ISpecification
     {
+        string Version { get; }
+
         IReadOnlyDictionary<string, object> Extensions { get; }
 
         IReadOnlyList<INetwork> Networks { get; }

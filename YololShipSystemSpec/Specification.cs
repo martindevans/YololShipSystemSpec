@@ -32,6 +32,9 @@ namespace YololShipSystemSpec
     internal class Specification
         : ISpecification
     {
+        [YamlMember("version")] private string _version;
+        [YamlIgnore] public string Version => _version;
+
         [YamlMember("networks")] private List<Network> _networks;
         [YamlIgnore] IReadOnlyList<INetwork> ISpecification.Networks => _networks;
 
