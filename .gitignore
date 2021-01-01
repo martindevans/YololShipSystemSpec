@@ -8,3 +8,5 @@
 obj
 bin
 _ReSharper.Caches
+/YololShipSystemSpec/nuget-push.ps1
+/YololShipSystemSpec/*.nupkg

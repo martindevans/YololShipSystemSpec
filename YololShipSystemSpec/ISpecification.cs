@@ -34,4 +34,19 @@ namespace YololShipSystemSpec
 
         IReadOnlyDictionary<string, string> FieldNames { get; }
     }
+
+    // ReSharper disable once InconsistentNaming
+    public static class IDeviceExtensions
+    {
+        public static IEnumerable<(string, string)> ResolveNames(this IDevice device)
+        {
+            foreach (var name in device.FieldNames)
+            {
+                yield return (
+                    name.Key,
+                    $"{device.Prefix}{name.Value}{device.Suffix}"
+                );
+            }
+        }
+    }
 }
