@@ -44,7 +44,7 @@ namespace YololShipSystemSpec
             {
                 yield return (
                     name.Key,
-                    $"{device.Prefix}{name.Value}{device.Suffix}"
+                    $"{device.Prefix ?? ""}{name.Value ?? name.Key}{device.Suffix ?? ""}"
                 );
             }
         }

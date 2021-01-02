@@ -20,6 +20,9 @@ namespace SpecTests
             Assert.AreEqual("1.0.0", spec.Version);
 
             Console.WriteLine(string.Join(",", spec.Networks[0].Devices[0].FieldNames));
+
+            var n0d0 = spec.Networks[0].Devices[0];
+            var resolve = n0d0.ResolveNames();
         }
     }
 }
